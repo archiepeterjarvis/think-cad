@@ -1,3 +1,5 @@
+from typing import Optional
+
 from pydantic import BaseModel, Field
 
 
@@ -9,7 +11,7 @@ class Entity(BaseModel):
 
 
 class Object(BaseModel):
-    type: str = Field(..., description="Type of the object")
+    type: Optional[str] = Field(..., description="Type of the object")
     modifiers: list[str] = Field(
         default_factory=list, description="List of modifiers for the object"
     )
