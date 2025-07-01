@@ -2,7 +2,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from shared.models.misc import Entity, CleanedRequest
+from shared.models.misc import Entity
 
 
 class NERResponse(BaseModel):
@@ -10,6 +10,4 @@ class NERResponse(BaseModel):
     entities: Optional[list[Entity]] = Field(
         default_factory=list, description="List of extracted entities"
     )
-    cleaned_request: Optional[CleanedRequest] = Field(
-        default_factory=CleanedRequest, description="Cleaned request with action and object"
-    )
+
