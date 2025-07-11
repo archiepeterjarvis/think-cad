@@ -11,3 +11,10 @@ class NERResponse(BaseModel):
         default_factory=list, description="List of extracted entities"
     )
 
+
+class CADResponse(BaseModel):
+    error: Optional[str] = Field(None, description="Error message if any")
+    warnings: Optional[list[str]] = Field(None, description="Warnings if any")
+    model_path: Optional[str] = Field(
+        None, description="Path to the generated CAD model"
+    )
